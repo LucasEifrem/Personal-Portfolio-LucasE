@@ -2,15 +2,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-body {
-  background: linear-gradient(135deg, #000000 25%, transparent 25%) -32px 0/
-      64px 64px,
-    linear-gradient(225deg, rgba(0, 0, 0, 0.5) 25%, transparent 25%) -32px 0/
-      64px 64px,
-    linear-gradient(315deg, #000000 25%, transparent 25%) 0 0/ 64px 64px,
-    linear-gradient(45deg, rgba(0, 0, 0, 0.5) 25%, #364f56 25%) 0 0/ 64px 64px;
-  background-color: #364f56;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  transition: fade 2.5s ease-in-out;
+  transition-property: all;
 }
 :root {
   --backgorund: #000000;
@@ -19,26 +13,89 @@ body {
   --topnav: 6px;
   --pic: 14vh;
 }
+body {
+    
+  background: linear-gradient(135deg, #000000 25%, transparent 25%) -32px 0/
+      64px 64px,
+    linear-gradient(225deg, rgba(0, 0, 0, 0.5) 25%, transparent 25%) -32px 0/
+      64px 64px,
+    linear-gradient(315deg, #000000 25%, transparent 25%) 0 0/ 64px 64px,
+    linear-gradient(45deg, rgba(0, 0, 0, 0.5) 25%, #364f56 25%) 0 0/ 64px 64px;
+  background-color: #364f56;
+  animation: melker 20s linear infinite;
+}
+
+@keyframes melker {
+  0% {
+    background-position: -100%;
+  }
+
+  50% {
+    background-position: 0;
+  }
+
+  100% {
+    background-position: 100%;
+  }
+}
+
 header {
   display: flex;
-  justify-content: center;
   padding: var(--padding);
   background-color: var(--backgorund);
   color: var(--text-color);
-  width: 100vw;
-  height: 20vh;
-  margin: auto;
+  width: 100%;
+  height: fit-content;
 }
 p {
   align-items: center;
   margin: var(--padding);
 }
 #header {
-  width: 90vw;
+  width: 100vw;
   padding: 1rem;
+  margin: auto;
+}
+.header {
+  width: 100vw;
+  padding: 1rem;
+  margin: auto;
+  background-color: blanchedalmond;
 }
 div > h2 {
-  margin: var(--padding);
+  margin: 4px;
+}
+.firstinfo {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 10vh;
+  margin-bottom: 20vh;
+}
+.pictureofme {
+  display: block;
+  display: flex;
+  justify-content: center;
+  width: 400px;
+  height: auto;
+  border-radius: 50px;
+  margin: auto;
+}
+.startbutton {
+  margin: 10px;
+}
+.starttext {
+  display: flex;
+  margin: auto;
+  color: white;
+  width: 50vh;
+  align-items: center;
+  background-color: #364f56;
+  border: 2px solid black;
+  padding: 1rem;
+  border-radius: 50px;
+  justify-content: center;
 }
 a {
   text-decoration: none;
@@ -50,11 +107,23 @@ a {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: #fc8e8e;
+  background-color: #c1d4ff;
   justify-content: space-between;
   padding: var(--topnav);
   border: 1px solid #000000;
   color: var(--backgorund);
+  padding: var(--padding);
+  width: 90vw;
+}
+.starttext {
+}
+.bottom-navigation {
+  color: #c1d4ff;
+  margin: 10px;
+}
+.bottom-navigation:hover {
+  background-color: #364f56;
+  color: #c1d4ff;
 }
 #main-content {
   display: flex;
@@ -64,24 +133,39 @@ a {
   flex-wrap: wrap;
   margin: 1rem;
 }
-#cube,
-.cube {
-  background-color: lightblue;
-  border: solid 2px darkblue;
+.infotitle {
   display: flex;
+  justify-content: center;
+  margin: 6px;
+}
+.imagecube {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  height: 10rem;
+}
+.image {
+  height: auto;
+  width: 20%;
+}
+.cube {
+  background-color: #000000;
+  color: #c1d4ff;
+  border: solid 2px darkslategray;
+  color: white;
+  display: flex;
+  flex-direction: column;
   width: 45vw;
   margin: 1rem;
-  border-top-left-radius: 40px;
-  border-bottom-right-radius: 40px;
+  border-radius: 50px;
   margin: auto;
   margin-top: 2rem;
   justify-content: space-between;
-  transform: skew(-20deg);
   transition: transform 2s linear;
   transition-property: all;
 }
-main{
-    height: 60vh;
+main {
+  height: max-content;
 }
 img {
   display: flex;
@@ -95,18 +179,36 @@ footer {
   padding: var(--padding);
   height: 20vh;
 }
-.startbutton {
-  color: var(--text-color);
-  margin: var(--padding);
-}
-
 a:hover {
-  background-color: darkslategray;
+  background-color: black;
   border: 2px solid --backgorund;
   border-radius: 4px;
   width: fit-content;
   transition: transform 250ms linear;
   transition-property: all;
+  color: #c1d4ff;
+}
+.blue:hover {
+  background-color: #c1d4ff;
+}
+.infotext {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: fit-content;
+  margin-top: 4rem;
+}
+.infotext > h3 {
+  align-items: center;
+  width: 50vw;
+  background-color: #c1d4ff;
+  border: 2px solid #c1d4ff;
+  padding: var(--padding);
+  border-radius: 15px;
+}
+.beage:hover {
+  background-color: blanchedalmond;
 }
 .contactbody {
   background: linear-gradient(135deg, #ffffff 25%, transparent 25%) -63px 0/
@@ -130,11 +232,15 @@ textarea {
   margin-top: 6px;
   margin-bottom: 16px;
   resize: vertical;
+  background-color: #000000;
+  color: #c1d4ff;
 }
-
+label {
+  color: #c1d4ff;
+}
 input[type="submit"] {
-  background-color: #04aa6d;
-  color: white;
+  background-color: #000000;
+  color: #c1d4ff;
   padding: 12px 20px;
   border: none;
   border-radius: 4px;
@@ -151,40 +257,54 @@ input[type="submit"]:hover {
 }
 
 @media only screen and (max-width: 1024px) {
-  
-      #cube,
-      .cube {
-        transform: none;
-        flex-direction: column;
-      }
-      img {
-        object-fit: contain;
-      }
-      h3{
-        width: fit-content;
-        font-size: 16px;
-      }
-      main{
-        height: max-content;
-      }
-}
-@media only screen and (max-width: 767px) {
-  #main-content {
-    flex-direction: column;
-  }
-  #cube,
   .cube {
     transform: none;
     flex-direction: column;
   }
   img {
-    object-fit: contain;
+    width: 40vw;
   }
-  h3{
+  h3 {
     width: fit-content;
     font-size: 16px;
+    margin-bottom: 10px;
   }
-  main{
+  main {
+    height: max-content;
+  }
+  .header {
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 767px) {
+  #main-content {
+    flex-direction: column;
+  }
+
+  #cube,
+  .cube {
+    transform: none;
+    flex-direction: column;
+  }
+  .pictureofme {
+    width: 70vw;
+    height: auto;
+  }
+  .bottom-navigation {
+    margin: 10px;
+    padding: 0px;
+    width: 60vw;
+    margin: auto;
+  }
+  h3 {
+    width: fit-content;
+    font-size: 8px;
+  }
+  h2 {
+    margin: 2px;
+    padding: 0px;
+  }
+  main {
     height: max-content;
   }
 }
